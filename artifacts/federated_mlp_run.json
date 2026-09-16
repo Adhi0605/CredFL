@@ -1,0 +1,250 @@
+{
+  "model": "FraudMLP",
+  "federated_algorithm": "sample-weighted FedAvg",
+  "privacy_mechanism": null,
+  "aggregation": {
+    "method": "FedAvg",
+    "weighting": "client fit-row count",
+    "client_participation": "all clients in every round"
+  },
+  "input_features": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "config": {
+    "hidden_sizes": [
+      64,
+      32
+    ],
+    "dropout": 0.2,
+    "rounds": 10,
+    "local_epochs": 1,
+    "learning_rate": 0.001,
+    "batch_size": 2048,
+    "weight_decay": 0.0001,
+    "validation_fraction": 0.1,
+    "seed": 42
+  },
+  "device": "cpu",
+  "runtime": {
+    "python": "3.12.13",
+    "pytorch": "2.13.0+cpu",
+    "numpy": "2.5.2",
+    "pandas": "2.3.3"
+  },
+  "client_files": [
+    "client_00.csv",
+    "client_01.csv",
+    "client_02.csv",
+    "client_03.csv",
+    "client_04.csv",
+    "client_05.csv"
+  ],
+  "client_fit_rows": [
+    4583,
+    111161,
+    32201,
+    2555,
+    31419,
+    23139
+  ],
+  "client_fit_fraud_counts": [
+    214,
+    16,
+    29,
+    30,
+    40,
+    25
+  ],
+  "total_fit_rows": 205058,
+  "validation_rows": 22787,
+  "threshold_selection": {
+    "method": "maximum F1 on per-client stratified validation splits",
+    "selected_threshold": 0.9245493412017822,
+    "validation_f1": 0.8378378378378379
+  },
+  "history": [
+    {
+      "round": 1,
+      "weighted_training_loss": 1.2833956122362915,
+      "client_losses": [
+        22.770235609337153,
+        0.4980279395114462,
+        0.9520220601285845,
+        6.041836986243141,
+        1.071784401039349,
+        1.0236360222143714
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 2,
+      "weighted_training_loss": 1.0436385392921863,
+      "client_losses": [
+        21.971325471259192,
+        0.29750856041342305,
+        0.6309094608694473,
+        7.038672028409058,
+        0.7586515602340347,
+        0.7824323401289754
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 3,
+      "weighted_training_loss": 0.8649964593274767,
+      "client_losses": [
+        21.781623733374012,
+        0.17289483133675687,
+        0.387633226014791,
+        6.260778827163338,
+        0.4967303747839633,
+        0.6156212879058489
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 4,
+      "weighted_training_loss": 0.7667266779618527,
+      "client_losses": [
+        21.025347398353826,
+        0.12244886708055183,
+        0.2606419253680081,
+        5.747320923926545,
+        0.41532261766434747,
+        0.4808494993517911
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 5,
+      "weighted_training_loss": 0.8315004532574536,
+      "client_losses": [
+        23.465521528812936,
+        0.13457217037668984,
+        0.24257874104374036,
+        6.598720772812277,
+        0.3689169610452332,
+        0.5074612616063352
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 6,
+      "weighted_training_loss": 0.8991370940262714,
+      "client_losses": [
+        26.67071022093621,
+        0.1142417199345436,
+        0.2769194842532519,
+        7.114183731228405,
+        0.35344583785476236,
+        0.4859945083779936
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 7,
+      "weighted_training_loss": 0.9882601960849435,
+      "client_losses": [
+        29.306665917866205,
+        0.12112596508957131,
+        0.33081673824679736,
+        6.8812907769062255,
+        0.39696707924356445,
+        0.6122602357858864
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 8,
+      "weighted_training_loss": 1.1910452165368879,
+      "client_losses": [
+        36.44831024359699,
+        0.1311653756003237,
+        0.3587769039909078,
+        7.5529582709540595,
+        0.4356032335734306,
+        0.7810738746603602
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 9,
+      "weighted_training_loss": 1.2926722276465183,
+      "client_losses": [
+        38.59332697895607,
+        0.118332942040202,
+        0.36168279079142657,
+        10.50157517215598,
+        0.609068892617244,
+        0.7533233196671751
+      ],
+      "participating_clients": 6
+    },
+    {
+      "round": 10,
+      "weighted_training_loss": 1.602593023067285,
+      "client_losses": [
+        47.39357368690646,
+        0.17999726616085987,
+        0.30533524824410835,
+        14.49294788935413,
+        0.6857066246914169,
+        0.9942217548789358
+      ],
+      "participating_clients": 6
+    }
+  ],
+  "metrics": {
+    "test_rows": 56962,
+    "test_fraud_count": 98,
+    "threshold": 0.9245493412017822,
+    "accuracy": 0.9992802219023208,
+    "precision": 0.8131868131868132,
+    "recall": 0.7551020408163265,
+    "f1": 0.783068783068783,
+    "roc_auc": 0.908559215399722,
+    "average_precision": 0.6241986248448359,
+    "predicted_fraud_count": 91
+  },
+  "centralized_metrics": {
+    "test_rows": 56962,
+    "test_fraud_count": 98,
+    "threshold": 0.9982823133468628,
+    "accuracy": 0.9993679997191109,
+    "precision": 0.803921568627451,
+    "recall": 0.8367346938775511,
+    "f1": 0.82,
+    "roc_auc": 0.9751603898453023,
+    "average_precision": 0.6986482925796612,
+    "predicted_fraud_count": 102
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "model": "FraudMLP",
+  "input_features": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "config": {
+    "hidden_sizes": [
+      64,
+      32
+    ],
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "batch_size": 2048,
+    "epochs": 10,
+    "weight_decay": 0.0001,
+    "threshold": 0.5,
+    "validation_fraction": 0.1,
+    "seed": 42
+  },
+  "device": "cpu",
+  "training_rows": 227845,
+  "model_fit_rows": 205060,
+  "validation_rows": 22785,
+  "training_fraud_count": 394,
+  "threshold_selection": {
+    "method": "maximum F1 on stratified client-training validation split",
+    "selected_threshold": 0.9982823133468628,
+    "validation_f1": 0.7894736842105263
+  },
+  "client_files": [
+    "client_00.csv",
+    "client_01.csv",
+    "client_02.csv",
+    "client_03.csv",
+    "client_04.csv",
+    "client_05.csv"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "training_loss": 0.6926725817365575
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.32675006654795513
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.27277422114025146
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.2485419568556943
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.2289537710254569
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.2180046012947923
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.20101556132246806
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.19842302101313353
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.1962126481202269
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.17003950441620774
+    }
+  ],
+  "metrics": {
+    "test_rows": 56962,
+    "test_fraud_count": 98,
+    "threshold": 0.9982823133468628,
+    "accuracy": 0.9993679997191109,
+    "precision": 0.803921568627451,
+    "recall": 0.8367346938775511,
+    "f1": 0.82,
+    "roc_auc": 0.9751603898453023,
+    "average_precision": 0.6986482925796612,
+    "predicted_fraud_count": 102
+  }
+}
